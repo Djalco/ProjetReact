@@ -4,13 +4,29 @@ import { Typography } from "@/ui/design-system/typography/typography"
 import { Button } from "@/ui/design-system/button/button"
 import Link from "next/link";
 import { ActiveLink } from "./active-link";
+import { useAuth } from "@/context/AuthUserContext";
+import { AccountAvatarLink } from "./account-avatar-link";
 
-interface Props{
-    siwe?:string;
+interface Props {
+    siwe?: string;
 }
 
 
-export const Navigation= ({}:Props) =>{
+export const Navigation = ({ }: Props) => {
+    const { authUser } = useAuth();
+    console.log("authuser", authUser)
+
+    const authentificationSystem = (
+        < div className="flex items-center gap-2" >
+            <Button variant="accent" baseUrl="/connexion" size="small">
+                Connexion
+            </Button>
+            <Button variant="secondary" baseUrl="/connexion/inscription" size="small">
+                Rejoindre
+            </Button>
+
+        </ div>
+    )
     return (
         <div className="border-b-2 border-gray-400">
             <Container className="flex items-center justify-between py-1.5">
@@ -21,7 +37,7 @@ export const Navigation= ({}:Props) =>{
                             <div className="text-gray font-extrabold text-[24px]" >
                                 Coders Monkeys
                             </div>
-                            <Typography 
+                            <Typography
                                 variant="caption4"
                                 component="span"
                                 theme="gray"
@@ -32,19 +48,16 @@ export const Navigation= ({}:Props) =>{
                     </div>
                 </Link>
                 <div className="flex items-center gap-7">
-                    <Typography 
+                    <Typography
                         variant="caption3" component="div" className="flex items-center gap-7">
                         <ActiveLink href="/design-system">Design-System</ActiveLink>
                         <ActiveLink href=" ">Projets</ActiveLink>
                         <ActiveLink href=" ">Formations</ActiveLink>
                         <ActiveLink href=" ">Contacts</ActiveLink>
                     </Typography>
-                    <div className="flex items-center gap-7">
-                            <Button variant="accent" baseUrl="/connexion" size="small">Connexion</Button>
-                            <Button variant="secondary" baseUrl="/connexion/inscription" size="small">Rejoindre</Button>
-                        
-                    </div>
+                    {!authUser ? authentificationSystem : <AccountAvatarLink/>}
                 </div>
+
             </Container>
         </div>
     )

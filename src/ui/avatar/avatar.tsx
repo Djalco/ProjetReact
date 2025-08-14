@@ -25,7 +25,7 @@ export const Avatar =({size="medium" ,src,alt}: Props)=>{
     return(
         <div className={clsx(sizeAvatar, "bg-gray-400 rounded-full relative" )}>
             {<Image 
-                src={src}
+                src={src ? src : "/assets/svg/logo.svg"}
                 alt= {alt}
                 fill
                 className="rounded-full object-covert object-left-center"
