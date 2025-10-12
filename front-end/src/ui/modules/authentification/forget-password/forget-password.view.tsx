@@ -4,10 +4,10 @@ import { Typography } from "@/ui/design-system/typography/typography";
 import Image from "next/image";
 import Link from "next/link";
 import { ForgetPasswordForm } from "./forget-password.form";
-import { FormsType } from "@/types/forms";
+import { FormsType, ForgetFormFielsType } from "@/types/forms";
 
 interface Props {
-    form: FormsType;
+    form: FormsType<ForgetFormFielsType>;
 }
 
 export const ForgetPasswordView = ({form}:Props) => {

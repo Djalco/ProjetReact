@@ -1,9 +1,9 @@
-import { FormsType } from "@/types/forms"
+import { FormsType, OnboardingProfileFormFielsTypes } from "@/types/forms"
 import { Input } from "@/ui/design-system/forms/input"
 import { Textarea } from "@/ui/design-system/forms/textarea"
 
 interface Props {
-    form: FormsType
+    form: FormsType<OnboardingProfileFormFielsTypes>
 }
 
 export const ProfileStepForm = ({ form }: Props) => {

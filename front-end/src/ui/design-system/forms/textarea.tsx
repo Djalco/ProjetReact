@@ -1,12 +1,14 @@
 import clsx from "clsx";
 import { Typography } from "../typography/typography";
 
-interface Props {
+import { FieldValues, UseFormRegister, FieldErrors, FieldError, FieldPath } from "react-hook-form";
+
+interface Props<T extends FieldValues> {
     isLoading: boolean;
     placeholder: string;
     rows?: number
-    register: any;
-    errors: any;
+    register: UseFormRegister<T>;
+    errors: FieldErrors<T>
     errorMsg?: string;
     id: string;
     require?: boolean;
@@ -14,7 +16,7 @@ interface Props {
     label?: string
 }
 
-export const Textarea = ({isLoading,
+export const Textarea = <T extends FieldValues> ({isLoading,
     placeholder,
     rows = 5,
     register,
@@ -24,7 +26,7 @@ export const Textarea = ({isLoading,
     require = true,
     isAutocompleted = false,
     label
-}: Props) => {
+}: Props<T>) => {
     return (
         <div className="space-y-2">
             {label && (
@@ -45,8 +47,8 @@ export const Textarea = ({isLoading,
                     "w-full p-4 font-light border rounded focus:ring-1 focus:ring-primary border-gray-400"
                 )}
                 disabled={isLoading}
-                {...register(id,{
-                    require:{
+                {...register(id as FieldPath<T>, {
+                    required:{
                         value:require,
                         message: errorMsg
                 }
@@ -55,7 +57,7 @@ export const Textarea = ({isLoading,
             />
             {errors[id] && (
                 <Typography variant="caption4" component="div" theme="danger">
-                    {errors[id]?.message}
+                    {(errors[id] as FieldError)?.message}
                 </Typography>
             )}
         </div>

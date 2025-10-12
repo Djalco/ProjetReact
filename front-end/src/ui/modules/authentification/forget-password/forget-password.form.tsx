@@ -1,9 +1,9 @@
-import { FormsType } from "@/types/forms";
+import { FormsType, ForgetFormFielsType } from "@/types/forms";
 import { Button } from "@/ui/design-system/button/button";
 import { Input } from "@/ui/design-system/forms/input";
 
 interface Props {
-    form: FormsType;
+    form: FormsType<ForgetFormFielsType>;
 }
 
 export const ForgetPasswordForm =({form}:Props) =>{

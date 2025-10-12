@@ -1,5 +1,4 @@
 import { REGISTERED } from "@/lib/session-status";
-import { Layout } from "@/ui/components/layout/layout";
 import { Seo } from "@/ui/components/seo/seo";
 import { Session } from "@/ui/components/session/session";
 import { OnboardingContainer } from "@/ui/modules/onboarding/onboardingContainer";

@@ -1,9 +1,9 @@
-import { FormsType } from "@/types/forms";
+import { FormsType, RegisterFormFielsType } from "@/types/forms";
 import { Button } from "@/ui/design-system/button/button";
 import { Input } from "@/ui/design-system/forms/input";
 
 interface Props {
-    form: FormsType;
+    form: FormsType<RegisterFormFielsType>;
 }
 export const RegisterForm = ({ form }: Props) => {
     const {onSubmit, errors, isLoading, register, handleSubmit } = form;

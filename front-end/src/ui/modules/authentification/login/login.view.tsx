@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/ui/components/container/container";
 import { LoginForm } from "./login.form";
-import { FormsType } from "@/types/forms";
+import { FormsType, LoginFormFielsType } from "@/types/forms";
 
 interface Props {
-    form: FormsType;
+    form: FormsType<LoginFormFielsType>;
 }
 
 export const LoginView = ({form}:Props) => {

@@ -1,19 +1,20 @@
 import clsx from "clsx";
 import { Typography } from "../typography/typography";
+import { FieldValues, UseFormRegister, FieldErrors, FieldError, FieldPath } from "react-hook-form";
 
-interface Props {
+interface Props< T extends FieldValues >{
     isLoading: boolean;
     placeholder: string;
     type?: "text" | "email" | "password";
-    register: any;
-    errors: any;
+    register: UseFormRegister<T>;
+    errors: FieldErrors<T>;
     errorMsg?: string;
-    id: string;
+    id:  keyof T;
     require?: boolean;
     isAutocompleted?: boolean;
     label?:string
 }
-export const Input = ({ isLoading,
+export const Input = <T extends FieldValues> ({ isLoading,
     placeholder,
     type = "text",
     register,
@@ -22,7 +23,7 @@ export const Input = ({ isLoading,
     id,
     require = true,
     isAutocompleted = false,
-label }: Props) => {
+label }: Props<T>) => {
     return (
         <div className="space-y-2">
             {label && (
@@ -41,7 +42,7 @@ label }: Props) => {
                     "w-full p-4 font-light border border-gray-600  rounded focus:outline-none focus:ring-1 focus:ring-primary"
                 )}
                 disabled={isLoading}
-                {...register(id, {
+                {...register(id as FieldPath<T>, {
                     required: {
                         value: require,
                         message: errorMsg,
@@ -51,7 +52,7 @@ label }: Props) => {
             />
             {errors[id] && (
                 <Typography variant="caption4" component="div" theme="danger">
-                    {errors[id]?.message}
+                    {(errors[id] as FieldError)?.message}
                 </Typography>
             )}
         </div>

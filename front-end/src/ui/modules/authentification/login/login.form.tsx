@@ -1,9 +1,9 @@
-import { FormsType } from "@/types/forms";
+import { FormsType, LoginFormFielsType } from "@/types/forms";
 import { Button } from "@/ui/design-system/button/button";
 import { Input } from "@/ui/design-system/forms/input";
 
 interface Props {
-    form: FormsType;
+    form: FormsType<LoginFormFielsType>;
 }
 export const LoginForm = ({ form }: Props) => {
     const {onSubmit, errors, isLoading, register, handleSubmit } = form;

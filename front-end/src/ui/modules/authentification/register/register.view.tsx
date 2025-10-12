@@ -3,11 +3,11 @@ import { Box } from "@/ui/design-system/bos/box";
 import { Typography } from "@/ui/design-system/typography/typography";
 import Image from "next/image";
 import Link from "next/link";
-import { FormsType } from "@/types/forms";
+import { FormsType, ForgetFormFielsType } from "@/types/forms";
 import { RegisterForm } from "./register.form";
 
 interface Props {
-    form: FormsType
+    form: FormsType<ForgetFormFielsType>;
 }
 export const RegisterView = ({ form }: Props) => {
     return (
