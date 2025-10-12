@@ -35,7 +35,7 @@ export const OnboardingFooter = ({
             >
                 {prev && (
                     <Button
-                        disabled={isLoading}
+                        disable ={isLoading}
                         variant={!isLoading ? "outline" : "disable"}
                         action={prev}
                     >

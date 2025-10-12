@@ -12,6 +12,8 @@ import { firestoreUpdateDocument } from "@/api/firestore"
 import { useAuth } from "@/context/AuthUserContext"
 import { toast } from "react-toastify"
 import { useEffect } from "react"
+//import { updateUserIdentification } from "@/api/athentification"
+
 
 export const ProfileStep = ({
     next,
@@ -34,7 +36,7 @@ export const ProfileStep = ({
     } = useForm<OnboardingProfileFormFielsTypes>()
 
     const { authUser } = useAuth()
-
+    console.log("authUser", authUser)
     const { displayName, expertise, biography } = authUser.userDocument
     useEffect(() => {
         const fieldsToUpdate: ("displayName" | "expertise" | "biography")[] = [
@@ -74,6 +76,26 @@ export const ProfileStep = ({
             expertise !== formData.expertise ||
             biography !== formData.biography
         ) {
+/*
+            if (
+                displayName !== formData.displayName ||
+                authUser.displayName !== formData.displayName
+            ) {
+                const data = {
+                    displayName: formData.displayName
+                }
+                //use function form back-end
+                const { error } = await updateUserIdentification(
+                    authUser.uid,
+                    data
+                )
+
+                if (error) {
+                    setLaoding(false)
+                    toast.error(error.message)
+                    return
+                }
+            }*/
             handleUpdateUserDocument(formData)
         }
         next()

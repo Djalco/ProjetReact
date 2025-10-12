@@ -87,3 +87,30 @@ export const sendEmailVerificationProcedure = async () => {
         }
     }
 }
+//modification
+export const updateUserIdentification = async (uid: string, data: object ) => {
+    const result = await fetch("https://us-central1-front-end-84aa2.cloudfunctions.net/updateUser", 
+        {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            uid: uid,
+            data: data
+        })
+    })
+
+    if(!result.ok){
+        const errorResponse = await result.json()
+        const firebaseError= errorResponse as FirebaseError
+
+        return ({
+            code : firebaseError.code,
+            message: firebaseError.message
+
+        })
+    }
+
+    return {data:true}
+}
