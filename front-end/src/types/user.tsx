@@ -11,7 +11,7 @@ export interface UserInterface {
 }
 
 export interface UserDocument{
-    onboardingIsCpmpleted: boolean
+    onboardingIsCompleted: boolean
     uid: string
     email: string
     how_did_hear:string

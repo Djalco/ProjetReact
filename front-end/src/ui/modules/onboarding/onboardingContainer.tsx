@@ -4,6 +4,7 @@ import { WelcomeStep } from "./components/steps/welcome-step/welcome-step"
 import { OnboardingStepList } from "@/types/ondoarding-step-list"
 import { ProfileStep } from "./components/steps/profil-step/profile-step"
 import { AvartarStep } from "./components/steps/avatart/avatar-step"
+import { FinalStep } from "./components/steps/final-step/final-step"
 
 export const OnboardingContainer = () => {
 
@@ -23,13 +24,13 @@ export const OnboardingContainer = () => {
         },
         {
             id: 3,
-            label: "Avatar",
+            label: "Photo",
             component: { step: AvartarStep }
         },
         {
             id: 4,
             label: "Last ",
-            component: { step: WelcomeStep }
+            component: { step: FinalStep }
         }
     ]
 
