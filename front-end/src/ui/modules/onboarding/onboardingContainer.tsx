@@ -3,7 +3,7 @@ import { OnboardingView } from "./onboardingView"
 import { WelcomeStep } from "./components/steps/welcome-step/welcome-step"
 import { OnboardingStepList } from "@/types/ondoarding-step-list"
 import { ProfileStep } from "./components/steps/profil-step/profile-step"
-import { AvartarStep } from "./components/steps/avatart/avatar"
+import { AvartarStep } from "./components/steps/avatart/avatar-step"
 
 export const OnboardingContainer = () => {
 
@@ -25,6 +25,11 @@ export const OnboardingContainer = () => {
             id: 3,
             label: "Avatar",
             component: { step: AvartarStep }
+        },
+        {
+            id: 4,
+            label: "Last ",
+            component: { step: WelcomeStep }
         }
     ]
 

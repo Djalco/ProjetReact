@@ -26,7 +26,7 @@ export const Session = ({ children, sessionStatus }: Props) => {
             !authUserIsLoading &&
             authUser &&
             onboardingIsCompleted &&
-            router.asPath === "/onboarding"
+            router.asPath === "/mon-espace"
         )
     }
 

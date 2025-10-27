@@ -1,0 +1,51 @@
+{
+    "an_unknown_error_has_occurred": "Une erreur inconnue est survenue veuillez réessayer, contactez-nous si le problème persiste.",
+    "firestore": {
+        "permission-denied": "Permissions manquantes ou insuffisantes."
+    },
+    "createUserWithEmailAndPassword": {
+        "auth/email-already-in-use": "Cette adresse e-mail est déjà utilisée.",
+        "auth/invalid-email": "Cette adresse e-mail ne semble pas valide.",
+        "auth/operation-not-allowed": "Ce mode d'enregistrement n'est pas actif.",
+        "auth/weak-password": "Votre mot de passe n'est pas assez fort, il doit comporter au minimum 6 caractères."
+    },
+    "signInWithEmailAndPassword": {
+        "auth/invalid-email": "Cette adresse e-mail ne semble pas valide.",
+        "auth/user-disabled": "Connexion impossible, votre compte a été désactivé.",
+        "auth/user-not-found": "Connexion impossible, cette adresse e-mail n'existe pas.",
+        "auth/wrong-password": "Connexion impossible, votre mot de passe et votre e-mail ne correspondent pas."
+    },
+    "signOut": {
+        "auth/invalid-user-token": "Une erreur critique est survenue code: signOut auth/invalid-user-token.",
+        "auth/user-token-expired": "Une erreur critique est survenue code: signOut auth/user-token-expired.",
+        "auth/null-user": "Une erreur critique est survenue code: signOut auth/null-user.",
+        "auth/tenant-id-mismatch": "Une erreur critique est survenue code: signOut auth/tenant-id-mismatch."
+    },
+    "verifyPasswordResetCode": {
+        "auth/expired-action-code": "Impossible de continuer, cette procédure de récupération de mot de passe a expiré.",
+        "auth/invalid-action-code": "Impossible de continuer, cette procédure de récupération de mot de passe n'est pas valide.",
+        "auth/user-disabled": "Impossible de continuer, votre compte a été désactivé.",
+        "auth/user-not-found": "Impossible de continuer, votre compte a été supprimé."
+    },
+    "confirmPasswordReset": {
+        "auth/expired-action-code": "Impossible de continuer, cette procédure de récupération de mot de passe a expiré.",
+        "auth/invalid-action-code": "Impossible de continuer, cette procédure de récupération de mot de passe n'est pas valide.",
+        "auth/user-disabled": "Impossible de continuer, votre compte a été désactivé.",
+        "auth/user-not-found": "Impossible de continuer, votre compte a été supprimé.",
+        "auth/weak-password": "Votre mot de passe n'est pas assez fort, il doit comporter au minimum 6 caractères."
+    },
+    "updateEmail": {
+        "auth/invalid-email": "Cette adresse e-mail ne semble pas valide.",
+        "auth/email-already-in-use": "Cette adresse e-mail est déjà utilisée.",
+        "auth/requires-recent-login": "Procédure interdite, vous devez avoir été connecté récemment pour changer votre e-mail."
+    },
+    "reauthenticateWithCredential": {
+        "auth/user-mismatch": "Une erreur critique est survenue impossible de continuer, contacter un administrateur.",
+        "auth/user-not-found": "Une erreur critique est survenue impossible de continuer, contacter un administrateur.",
+        "auth/invalid-credential": "Une erreur critique est survenue impossible de continuer, contacter un administrateur.",
+        "auth/invalid-email": "Votre adresse e-mail semble invalide.",
+        "auth/wrong-password": "Votre mot de passe ne correspond pas.",
+        "auth/invalid-verification-code": "Une erreur critique est survenue impossible de continuer, contacter un administrateur.",
+        "auth/invalid-verification-id": "Une erreur critique est survenue impossible de continuer, contacter un administrateur."
+    }
+}  

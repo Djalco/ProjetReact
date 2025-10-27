@@ -12,7 +12,7 @@ import { firestoreUpdateDocument } from "@/api/firestore"
 import { useAuth } from "@/context/AuthUserContext"
 import { toast } from "react-toastify"
 import { useEffect } from "react"
-//import { updateUserIdentification } from "@/api/athentification"
+import { updateUserIdentification } from "@/api/athentification"
 
 
 export const ProfileStep = ({
@@ -76,7 +76,7 @@ export const ProfileStep = ({
             expertise !== formData.expertise ||
             biography !== formData.biography
         ) {
-/*
+
             if (
                 displayName !== formData.displayName ||
                 authUser.displayName !== formData.displayName
@@ -95,7 +95,7 @@ export const ProfileStep = ({
                     toast.error(error.message)
                     return
                 }
-            }*/
+            }
             handleUpdateUserDocument(formData)
         }
         next()
