@@ -36,7 +36,7 @@ export const ProfileStep = ({
     } = useForm<OnboardingProfileFormFielsTypes>()
 
     const { authUser } = useAuth()
-    console.log("authUser", authUser)
+    console.log("authUser", authUser.uid)
     const { displayName, expertise, biography } = authUser.userDocument
     useEffect(() => {
         const fieldsToUpdate: ("displayName" | "expertise" | "biography")[] = [

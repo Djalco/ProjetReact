@@ -43,13 +43,16 @@ export const Session = ({ children, sessionStatus }: Props) => {
     }
 
     if (sessionStatus === GUEST && !authUserIsLoading) {
-        if (authUser) {
+        if (!authUser) {
+            // L'utilisateur n'est pas connecté → on affiche la page
             return <>{children}</>;
         } else {
-            router.push("/mon-espace"); // ✅ espace supprimé
+            // L'utilisateur est connecté → on peut rediriger
+            router.push("/mon-espace");
             return <ScreenSpinner />;
         }
     }
+
 
     if (sessionStatus === REGISTERED && !authUserIsLoading) {
         if (authUser) {

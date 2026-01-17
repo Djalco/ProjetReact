@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 
 import { Container } from "@/ui/components/container/container";
 import { Typography } from "@/ui/design-system/typography/typography";
@@ -37,8 +37,8 @@ export const Footer=()=>{
                     <a href="/#" target="_blank">
                         <Image 
                             src="/assets/svg/logo.svg"
-                            width={229}
-                            height={216}
+                            width={150}
+                            height={130}
                             alt="Remote Monkey | Youtube"
                        />
                     </a>
